@@ -56,6 +56,12 @@ function do_recv() {
     var arr = ws.rQshiftBytes(ws.rQlen()), str = "",
         chr, cmd, code, value;
 
+    var array = [];
+    for(var i=0; i<arr.length; i++) {
+      array[i] = arr[i];
+    }
+    arr = array;
+
     Util.Debug("Received array '" + arr + "'");
     while (arr.length > 0) {
         chr = arr.shift();
